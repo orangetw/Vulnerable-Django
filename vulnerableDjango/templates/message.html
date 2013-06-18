@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Leave Message </title>
+  <link href='static/bootstrap.min.css' rel='stylesheet' type='text/css' />   
+  <link href='static/css.css' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12 well-small" align='center'>
+      <form action='' method='POST'>
+        <p> <input type="text" name="{{ form.name.name }}" value="{{form.name.value}}"> </p>
+        <textarea rows=5 cols=10 name="{{form.content.name}}"></textarea>
+        <br />
+        <input type="submit" class="btn btn-info" value="Submit">
+        <input type="button" class="btn btn-info" value="Reset">
+      </form>
+      <div>
+
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class='text-center'>
+      <i>
+        This is a vulnerable Django message board. <br>
+
+        Try to hack it, p3ned a shell and get the key. <br>
+        Source Code is your treasure, get it in <a href="https://github.com/OrangeTW/Vulnerable-Django/" target='_blank'>GitHub</a><br><br>
+        (If you have fun, give me a star on github :P)
+      </i>
+      </div>
+
+      <div id="wrapper">
+        <div id="columns">
+            {% for message in messages%}
+              <div class='pin'>
+                <p>
+                {% if message.name == 'Orange' %}
+                  <div class='label label-inverse orange'>{{ message.name }}</div>
+                {% else %}
+                  <div class='label label-inverse'>{{ message.name }}</div>
+                {% endif%}
+                  <div class='content'> {{ message.content|linebreaksbr }} </div>
+                  <div class='time text-right'><small> {{ message.time|date:"Y-m-d, H:i:s" }} </small></div>
+                </p>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
