@@ -1,6 +1,9 @@
-This is README.md
+Hacks in Taiwan 2013 Wargame (p3ned 500)
 
-Try to pwn a shell.
+This is a vulnerable Django message board. 
+Try to hack it, p3ned a shell and get the key. 
+Source Code is your treasure.
 
-By Orange@chroot.org  
-2013/07/01
+
+By Orange@chroot.org 
+2013/07/14
